@@ -39,7 +39,13 @@ flowchart LR
                 vt1[Struct and Field Validation\n'go-playground/validator']
             end
             subgraph it[Integration Testing]
-                it1[In-House Go Framework\nProvision and Run Isolated API Backend\nVerify Authentication to API\nVerify features and plugins\nVerify return codes from all API endpoints]
+                it1[In-House Go Framework]
+                it1a[Deploy Container Images from Pipeline Context]
+                it1b[Provision and Run Isolated API Backend\nVerify Authentication to API\nVerify features and plugins\nVerify return codes from all API endpoints]
+                it2[Validate: Kubernetes Version Support using internal Version Skew Policy]
+                it3[Validate: Application Logging using Automated Synthetic Load]
+                it4[Validate: Error Handling works as expected]
+                it1 --> it1a --> it1b --> it2 --> it3 --> it4
             end          
             subgraph rp[Publish Artifacts : GitHub Release : GitHub Ubuntu 20.04 Runners]
             direction TB
