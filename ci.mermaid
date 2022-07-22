@@ -39,6 +39,7 @@ flowchart LR
                 vt1[Struct and Field Validation\n'go-playground/validator']
             end
             subgraph it[Integration Testing]
+                direction TB
                 it1[In-House Go Framework]
                 it1a[Deploy Container Images from Pipeline Context]
                 it1b[Provision and Run Isolated API Backend\nVerify Authentication to API\nVerify features and plugins\nVerify return codes from all API endpoints]
